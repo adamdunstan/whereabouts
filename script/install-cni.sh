@@ -12,7 +12,7 @@ set -u -e
 
 CNI_BIN_DIR=${CNI_BIN_DIR:-"/host/opt/cni/bin/"}
 WHEREABOUTS_KUBECONFIG_FILE_HOST=${WHEREABOUTS_KUBECONFIG_FILE_HOST:-"/etc/cni/net.d/whereabouts.d/whereabouts.kubeconfig"}
-CNI_CONF_DIR=${CNI_CONF_DIR:-"/host/etc/cni/net.d"}
+CNI_CONF_DIR=${CNI_CONF_DIR:-"/etc/cni/net.d"}
 
 # Make a whereabouts.d directory (for our kubeconfig)
 
@@ -78,9 +78,7 @@ EOF
   "datastore": "kubernetes",
   "kubernetes": {
     "kubeconfig": "${WHEREABOUTS_KUBECONFIG}"
-  },
-  "log_file": "/tmp/whereabouts.log",
-  "log_level": "debug"
+  }
 }
 EOF
 
